@@ -45,6 +45,7 @@ li a:hover {
 button {
   background: #ffffff;
   border: 1px solid #041833;
+  border-radius: 5px;
   color: #041833;
   width: 2rem;
   height: 2rem;
