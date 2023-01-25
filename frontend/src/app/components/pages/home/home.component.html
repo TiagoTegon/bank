@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="title">
+    <h1>Account List</h1>
+  </div>
+  <button>+</button>
+</div>
+<ul>
+  <li *ngFor="let account of accounts">
+    <a routerLink="/account/{{account.id}}">
+      <div class="content">
+        <div>
+          <span>Bank:</span>
+          {{account.bankCode}}
+        </div>
+        <div>
+          <span>Agency:</span>
+          {{account.agency}}
+        </div>
+        <div>
+          <span>Account:</span>
+          {{account.account}}
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
