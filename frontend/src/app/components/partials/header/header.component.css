@@ -1,0 +1,27 @@
+header {
+  position: relative;
+  background: #ffffff;
+  padding: 0;
+  border-bottom: 1px solid #154580;
+}
+
+a {
+  color: #041833;
+}
+
+a:hover {
+  background: #154580;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+a.logo {
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
