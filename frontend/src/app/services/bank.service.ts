@@ -23,4 +23,8 @@ export class BankService {
   getAll():Observable<Bank[]> {
     return this.httpClient.get<Bank[]>(this.apiUrl)
   }
+
+  getBankByCode(searchTerm:string):Observable<Bank> {
+    return this.httpClient.get<Bank>(`${this.apiUrl}/${searchTerm}`)
+  }
 }
