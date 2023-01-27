@@ -1,8 +1,9 @@
 <div class="header">
   <app-title title="Bank List"></app-title>
 </div>
+<app-search></app-search>
 <app-not-foud
-  [visible]="!banks || !banks.length"
+  [visible]="!banks"
   notFoundMessage="Error on load banks"
   resetLinkText="Reload"
   resetLinkRoute="/list"
@@ -18,7 +19,25 @@
             {{bank.code}}
           </div>
           <div>
-            <span>Nome:</span>
+            <span>Name:</span>
+            {{bank.fullName}}
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+<div *ngIf="bank.code && !banks.length">
+  <ul>
+    <li>
+      <a routerLink="/registration/{{bank.code}}">
+        <div class="content">
+          <div>
+            <span>Code:</span>
+            {{bank.code}}
+          </div>
+          <div>
+            <span>Name:</span>
             {{bank.fullName}}
           </div>
         </div>

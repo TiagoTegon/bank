@@ -9,6 +9,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { ListComponent } from './components/pages/list/list.component';
+import { SearchComponent } from './components/partials/search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListComponent } from './components/pages/list/list.component';
     HomeComponent,
     NotFoundComponent,
     TitleComponent,
-    ListComponent
+    ListComponent,
+    SearchComponent
   ],
   imports: [
     HttpClientModule,
