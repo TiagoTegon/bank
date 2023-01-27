@@ -1,6 +1,6 @@
 export class Bank {
   code!: number;
-  nome!: string;
+  name!: string;
   ispb!: string;
   fullName!: string;
 }
