@@ -3,3 +3,52 @@
   align-items: center;
   justify-content: center;
 }
+
+.content {
+  margin-top: 0.3rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  height: 7rem;
+}
+
+ul {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  height: 30rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+li a {
+  height: 5.5rem;
+  width: 20rem;
+  border: none;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #041833;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+li a:hover {
+  opacity: 0.9;
+  border: 1px solid #154580;
+  cursor: pointer;
+}
+
+ul::-webkit-scrollbar {
+  width: 3px;
+}
+ul::-webkit-scrollbar-track {
+  background: #9d9d9d;
+}
+ul::-webkit-scrollbar-thumb {
+  background-color: #154580;
+  border-radius: 20px;
+}
