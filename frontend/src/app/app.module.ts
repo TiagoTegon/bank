@@ -10,6 +10,8 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
 import { TitleComponent } from './components/partials/title/title.component';
 import { ListComponent } from './components/pages/list/list.component';
 import { SearchComponent } from './components/partials/search/search.component';
+import { AccountComponent } from './components/pages/account/account.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { SearchComponent } from './components/partials/search/search.component';
     NotFoundComponent,
     TitleComponent,
     ListComponent,
-    SearchComponent
+    SearchComponent,
+    AccountComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
