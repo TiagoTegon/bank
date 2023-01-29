@@ -1,47 +1,52 @@
-<div class="header">
-  <app-title title="Bank List"></app-title>
-</div>
-<app-search></app-search>
-<app-not-foud
-  [visible]="!banks"
-  notFoundMessage="Error on load banks"
-  resetLinkText="Reload"
-  resetLinkRoute="/list"
->
-</app-not-foud>
-<div *ngIf="banks && banks.length">
-  <ul>
-    <li *ngFor="let bank of banks">
-      <a routerLink="/registration/{{bank.code}}">
-        <div class="content">
-          <div>
-            <span>Code:</span>
-            {{bank.code}}
-          </div>
-          <div>
-            <span>Name:</span>
-            {{bank.fullName}}
-          </div>
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
-<div *ngIf="bank.code && !banks.length">
-  <ul>
-    <li>
-      <a routerLink="/registration/{{bank.code}}">
-        <div class="content">
-          <div>
-            <span>Code:</span>
-            {{bank.code}}
-          </div>
-          <div>
-            <span>Name:</span>
-            {{bank.fullName}}
-          </div>
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
+<main>
+  <div class="container">
+    <div class="header">
+      <app-title title="Bank List"></app-title>
+    </div>
+    <app-search></app-search>
+    <app-not-foud
+      [visible]="!banks"
+      notFoundMessage="Error on load banks"
+      resetLinkText="Reload"
+      resetLinkRoute="/list"
+    >
+    </app-not-foud>
+    <div *ngIf="banks && banks.length">
+      <ul>
+        <li *ngFor="let bank of banks">
+          <a routerLink="/registration/{{bank.code}}">
+            <div class="content">
+              <div>
+                <span>Code:</span>
+                {{bank.code}}
+              </div>
+              <div>
+                <span>Name:</span>
+                {{bank.fullName}}
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="bank.code && !banks.length">
+      <ul>
+        <li>
+          <a routerLink="/registration/{{bank.code}}">
+            <div class="content">
+              <div>
+                <span>Code:</span>
+                {{bank.code}}
+              </div>
+              <div>
+                <span>Name:</span>
+                {{bank.fullName}}
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</main>
