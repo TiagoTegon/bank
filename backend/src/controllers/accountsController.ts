@@ -12,8 +12,8 @@ class AccountController {
     let id = localStorage.getItem('nextId') || '0'
     let accounts: Array<Account> = JSON.parse(localStorage.getItem('accounts') || '[]')
     accounts.push({
-      id: id,
-      bankCode: Number(bankCode),
+      id,
+      bankCode,
       agency, 
       account
     })
