@@ -23,3 +23,28 @@ O app deverá possuir as seguintes funcionalidades:
     -   O cadastro da conta deverá ser armazenado no local storage do dispositivo - Armazenar (Codigo do Banco, Agencia e Conta).
 
 A documentação da API: [](https://brasilapi.com.br/docs#tag/BANKS)[https://brasilapi.com.br/docs#tag/BANKS](https://brasilapi.com.br/docs#tag/BANKS)
+
+## **Para executar o projeto**
+### Front-end
+Primeiro, navegue até a pasta com o comando: 
+
+    cd frontend
+O front-end foi desenvolvido em Angular utilizando seu CLI, caso não tenha instalado em sua máquina o CLI, basta realizar a instalação com o seguinte comando:
+
+    npm install -g @angular/cli
+Para executar o front-end é necessário o seguinte comando:
+
+    ng serve -o
+
+### Back-end
+Navegue até a pasta com o comando:
+
+    cd backend
+ Instale as dependências do projeto com:
+
+    npm install
+    
+  Por fim, execute o back-end com o seguinte comando:
+ 
+
+    npm start
