@@ -6,29 +6,31 @@ div {
 
 input {
   border-radius: 10rem 0 0 10rem;
-  border: none;
+  border: 1px solid #f5f5f5;
   height: 3rem;
-  width: 20rem;
-  background-color: #d6d6d6;
+  width: 25rem;
+  background-color: #f5f5f5;
   padding: 1.2rem;
   font-size: 1rem;
   font-weight: 500;
   outline: none;
 }
 
+input:focus {
+  border: 2px solid rgb(71, 120, 247, 0.3);
+}
+
 div button {
-  color: grey;
+  color: #ffffff;
   height: 3rem;
   width: 5rem;
   font-size: 1rem;
   border-radius: 0 10rem 10rem 0;
-  background-color: #ffffff;
-  color: #041833;
-  border: 1px solid #041833;
+  background-color: #4778f7;
+  border: none;
 }
 
 div button:hover {
-  background: #154580;
-  color: #9d9d9d;
+  background: rgba(71,120,247,.8);
   transition: 0.1s;
 }
