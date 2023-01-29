@@ -10,15 +10,15 @@ div {
 
 a {
   font-size: 1.1rem;
-  background-color: #154580;
+  background-color: #4778f7;
   color: #ffffff;
   border-radius: 10rem;
   padding: 0.7rem 1rem;
   margin: 1rem;
-  opacity: 0.8;
+  cursor: pointer;
 }
 
 a:hover {
-  opacity: 1;
-  cursor: pointer;
+  background: rgba(71,120,247,.8);
+  transition: 0.1s;
 }
