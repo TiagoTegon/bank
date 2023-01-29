@@ -1,35 +1,38 @@
-<div class="header">
-  <div class="title">
-    <app-title title="Account List"></app-title>
+<main>
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <app-title title="Account List"></app-title>
+      </div>
+      <button routerLink="/list">+</button>
+    </div>
+    <app-not-foud
+      [visible]="!accounts || !accounts.length"
+      notFoundMessage="There are no registered accounts"
+      resetLinkText="Reload"
+    >
+    </app-not-foud>
+    <div *ngIf="accounts && accounts.length">
+      <ul>
+        <li *ngFor="let account of accounts">
+          <a routerLink="/account/{{ account.id }}">
+            <div class="content">
+              <div>
+                <span>Bank:</span>
+                {{ account.bankCode }}
+              </div>
+              <div>
+                <span>Agency:</span>
+                {{ account.agency }}
+              </div>
+              <div>
+                <span>Account:</span>
+                {{ account.account }}
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <button routerLink="/list">+</button>
-</div>
-<app-not-foud
-  [visible]="!accounts || !accounts.length"
-  notFoundMessage="There are no registered accounts"
-  resetLinkText="Reload"
->
-</app-not-foud>
-<div *ngIf="accounts && accounts.length">
-  <ul>
-    <li *ngFor="let account of accounts">
-      <a routerLink="/account/{{account.id}}">
-        <div class="content">
-          <div>
-            <span>Bank:</span>
-            {{account.bankCode}}
-          </div>
-          <div>
-            <span>Agency:</span>
-            {{account.agency}}
-          </div>
-          <div>
-            <span>Account:</span>
-            {{account.account}}
-          </div>
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
-
+</main>
