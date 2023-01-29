@@ -1,42 +1,63 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from 'src/app/services/account.service';
 import { BankService } from 'src/app/services/bank.service';
+import { IAccountCreate } from 'src/app/shared/interfaces/IAccountCreate';
 import { Bank } from 'src/app/shared/models/Bank';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  styleUrls: ['./account.component.css'],
 })
 export class AccountComponent implements OnInit {
-  bank!: Bank
-  accountForm!: FormGroup
-  isSubmitted = false
+  bank!: Bank;
+  accountForm!: FormGroup;
+  isSubmitted = false;
 
-  constructor(private formBuilder: FormBuilder,activatedRoute: ActivatedRoute, bankService: BankService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    activatedRoute: ActivatedRoute,
+    bankService: BankService,
+    private accountService: AccountService,
+    private router: Router
+  ) {
     activatedRoute.params.subscribe((params) => {
-      if(params.code)
+      if (params.code)
         bankService.getBankByCode(params.code).subscribe((serverBank) => {
-          this.bank = serverBank
-        })
-    })
+          this.bank = serverBank;
+        });
+    });
   }
   ngOnInit(): void {
     this.accountForm = this.formBuilder.group({
-      agency:['', Validators.required],
-      account:['', Validators.required]
-    })
+      agency: ['', Validators.required],
+      account: ['', Validators.required],
+    });
   }
 
   get formControl() {
-    return this.accountForm.controls
+    return this.accountForm.controls;
   }
 
   submit() {
-    this.isSubmitted = true
-    if(this.accountForm.invalid) return
+    this.isSubmitted = true;
+    if (this.accountForm.invalid) return;
 
-    alert(`account: ${this.formControl.account.value} | agency: ${this.formControl.agency.value} | bank code: ${this.bank.code}`)
+    const formValues = this.accountForm.value;
+    const account: IAccountCreate = {
+      bankCode: this.bank.code,
+      agency: formValues.agency,
+      account: formValues.account,
+    };
+
+    this.accountService.createAccount(account).subscribe(_ => {
+      this.router.navigateByUrl('/')
+    })
+
+    alert(
+      `account: ${this.formControl.account.value} | agency: ${this.formControl.agency.value} | bank code: ${this.bank.code}`
+    );
   }
 }
