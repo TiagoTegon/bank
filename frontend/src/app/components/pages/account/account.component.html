@@ -1,69 +1,73 @@
-<app-not-foud
-  [visible]="!bank"
-  notFoundMessage="Bank not found!"
-  resetLinkText="Back"
-  resetLinkRoute="/list"
->
-</app-not-foud>
-<div *ngIf="bank">
-  <div class="header">
-    <app-title title="Registration account"></app-title>
-  </div>
+<main>
   <div class="container">
+    <app-not-foud
+    [visible]="!bank"
+    notFoundMessage="Bank not found!"
+    resetLinkText="Back"
+    resetLinkRoute="/list"
+  >
+  </app-not-foud>
+  <div *ngIf="bank">
     <div class="header">
-      <h2>Bank information</h2>
+      <app-title title="Registration account"></app-title>
     </div>
-    <div class="details">
-      <span>FullName: {{ bank.fullName }}</span>
-      <span>Code: {{ bank.code }}</span>
-      <span>ISPB: {{ bank.ispb }}</span>
-      <span>Name: {{ bank.name }}</span>
-    </div>
-  </div>
-  <form [formGroup]="accountForm" (ngSubmit)="submit()">
-    <div class="container">
+    <div class="content">
       <div class="header">
-        <h2>Account information</h2>
+        <h2>Bank information</h2>
       </div>
       <div class="details">
-        <div class="agency">
-          <span>Agency </span>
-          <input
-            #agency
-            type="text"
-            placeholder="Insert agency"
-            formControlName="agency"
-          />
+        <span>FullName: {{ bank.fullName }}</span>
+        <span>Code: {{ bank.code }}</span>
+        <span>ISPB: {{ bank.ispb }}</span>
+        <span>Name: {{ bank.name }}</span>
+      </div>
+    </div>
+    <form [formGroup]="accountForm" (ngSubmit)="submit()">
+      <div class="content">
+        <div class="header">
+          <h2>Account information</h2>
         </div>
-        <div
-          class="error-list"
-          *ngIf="formControl.agency.errors && isSubmitted"
-        >
-          <div *ngIf="formControl.agency.errors.required">
-            Agency field should not be empty
+        <div class="details">
+          <div class="agency">
+            <span>Agency </span>
+            <input
+              #agency
+              type="text"
+              placeholder="Insert agency"
+              formControlName="agency"
+            />
           </div>
-        </div>
-        <div class="account">
-          <span>Account </span>
-          <input
-            #account
-            type="text"
-            placeholder="Insert account number"
-            formControlName="account"
-          />
-        </div>
-        <div
-          class="error-list"
-          *ngIf="formControl.account.errors && isSubmitted"
-        >
-          <div *ngIf="formControl.account.errors.required">
-            Account field should not be empty
+          <div
+            class="error-list"
+            *ngIf="formControl.agency.errors && isSubmitted"
+          >
+            <div *ngIf="formControl.agency.errors.required">
+              Agency field should not be empty
+            </div>
+          </div>
+          <div class="account">
+            <span>Account </span>
+            <input
+              #account
+              type="text"
+              placeholder="Insert account number"
+              formControlName="account"
+            />
+          </div>
+          <div
+            class="error-list"
+            *ngIf="formControl.account.errors && isSubmitted"
+          >
+            <div *ngIf="formControl.account.errors.required">
+              Account field should not be empty
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="submit">
-      <button type="submit">Create account</button>
-    </div>
-  </form>
-</div>
+      <div class="submit">
+        <button type="submit">Create account</button>
+      </div>
+    </form>
+  </div>
+  </div>
+</main>
