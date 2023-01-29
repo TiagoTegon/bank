@@ -57,7 +57,7 @@ export class AccountComponent implements OnInit {
     })
 
     alert(
-      `account: ${this.formControl.account.value} | agency: ${this.formControl.agency.value} | bank code: ${this.bank.code}`
+      `Account created successfully`
     );
   }
 }
